@@ -1,4 +1,4 @@
-package com.example.teststarnest.ui.theme
+package com.example.teststarnest.designsystem.theme
 
 import android.app.Activity
 import android.os.Build
@@ -10,21 +10,23 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
-import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.graphics.*
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
+    primary = Brown,
     secondary = PurpleGrey80,
-    tertiary = Pink80
+    tertiary = Pink80,
+    onBackground = Color.White,
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
+    primary = Brown,
     secondary = PurpleGrey40,
-    tertiary = Pink40
+    tertiary = Pink40,
+    onBackground = Brown,
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),

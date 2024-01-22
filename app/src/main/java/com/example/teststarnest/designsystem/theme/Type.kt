@@ -1,4 +1,4 @@
-package com.example.teststarnest.ui.theme
+package com.example.teststarnest.designsystem.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
