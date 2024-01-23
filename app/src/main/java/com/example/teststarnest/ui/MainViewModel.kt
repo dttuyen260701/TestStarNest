@@ -74,6 +74,7 @@ class MainViewModel @Inject constructor(
                 }
                 keyBoardRepository.insertKeyBoards(*(keyboards.toTypedArray()))
             }
+            setFirstInitData(true)
             showLoading(false)
         }
     }

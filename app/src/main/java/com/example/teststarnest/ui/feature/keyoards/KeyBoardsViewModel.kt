@@ -25,7 +25,7 @@ class KeyBoardsViewModel @Inject constructor(
     private val _uiStateFlow = MutableStateFlow(KeyBoardUiState())
     val uiStateFlow = _uiStateFlow.asStateFlow()
 
-    init {
+    internal fun initData() {
         viewModelScope.launch {
             getCategories()
             getData(Constant.DefaultValue.DEFAULT_ALL_TYPE_ID)

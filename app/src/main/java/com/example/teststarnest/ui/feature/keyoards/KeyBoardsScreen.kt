@@ -22,6 +22,12 @@ internal fun KeyBoardsScreen(
 ) {
     viewModel.run {
         val uiState by uiStateFlow.collectAsStateWithLifecycle()
+        val firstInitData by firstInitData.collectAsStateWithLifecycle()
+        LaunchedEffect(key1 = firstInitData) {
+            if (firstInitData) {
+                initData()
+            }
+        }
         KeyBoardsContent(
             modifier = modifier,
             uiState = uiState,
