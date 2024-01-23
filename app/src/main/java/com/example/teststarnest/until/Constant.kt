@@ -7,5 +7,6 @@ package com.example.teststarnest.until
 class Constant {
     object DefaultValue {
         const val PADDING_HORIZONTAL_SCREEN = 16
+        const val DEFAULT_ALL_TYPE_ID = -1L
     }
 }

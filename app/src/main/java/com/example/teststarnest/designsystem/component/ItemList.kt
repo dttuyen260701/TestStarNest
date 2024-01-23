@@ -63,13 +63,13 @@ internal fun ItemCategory(
             ),
             modifier = Modifier
                 .wrapContentHeight()
-                .clickable {
-                    onItemClick(this@run)
-                }
                 .background(
                     bgGradient,
                     shape = RoundedCornerShape(14.dp)
                 )
+                .clickable {
+                    onItemClick(this@run)
+                }
                 .padding(horizontal = 8.dp, vertical = 5.dp)
                 .then(modifier))
     }
@@ -90,6 +90,7 @@ internal fun ItemKeyBoard(
         contentScale = ContentScale.FillWidth,
         modifier = modifier
             .width(itemWith.dp)
+            .aspectRatio(498f/360f)
             .clip(roundedCornerShape)
             .clickable {
                 onItemClick(keyBoard)
@@ -102,6 +103,8 @@ internal fun ItemKeyBoard(
 private fun PreviewItemKeyBoard() {
     ItemKeyBoard(
         keyBoard = KeyBoard(
+            id = 1L,
+            categoryId = 0L,
             previewIcon = R.drawable.theme_1
         ),
         onItemClick = {}
@@ -113,7 +116,7 @@ private fun PreviewItemKeyBoard() {
 private fun PreviewItemKeyBoardCategory() {
     ItemCategory(
         category = KeyBoardCategory(
-            id = "123",
+            id = 1L,
             name = "Galaxy",
             isSelected = false
         ),

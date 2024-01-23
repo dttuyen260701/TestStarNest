@@ -8,7 +8,7 @@ import androidx.room.*
 
 @Entity
 data class KeyBoardCategory(
-    @PrimaryKey val id: String = "",
+    @PrimaryKey(autoGenerate = true) val id: Long = 0L,
     @ColumnInfo val name: String = "",
-    val isSelected: Boolean = false
+    var isSelected: Boolean = false
 )

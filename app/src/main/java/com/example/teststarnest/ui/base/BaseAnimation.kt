@@ -21,7 +21,7 @@ internal fun <T>transactionColor(
         transitionSpec = {
             spring(
                 stiffness = 50f,
-                dampingRatio = 2f
+                dampingRatio = 0.5f
             )
         },
         label = ""

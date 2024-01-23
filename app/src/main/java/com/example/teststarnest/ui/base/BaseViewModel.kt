@@ -9,7 +9,11 @@ import kotlinx.coroutines.flow.*
 
 abstract class BaseViewModel : ViewModel() {
     companion object {
-        protected val _isLoading: MutableStateFlow<Boolean> = MutableStateFlow(false)
+        private val _isLoading: MutableStateFlow<Boolean> = MutableStateFlow(false)
+    }
+
+    protected suspend fun showLoading(isLoading: Boolean) {
+        _isLoading.emit(isLoading)
     }
 
     internal val isLoading = _isLoading.asStateFlow()

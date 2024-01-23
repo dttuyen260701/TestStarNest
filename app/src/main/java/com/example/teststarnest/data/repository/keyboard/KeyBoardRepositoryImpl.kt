@@ -2,6 +2,7 @@ package com.example.teststarnest.data.repository.keyboard
 
 import com.example.teststarnest.data.dao.*
 import com.example.teststarnest.data.model.*
+import com.example.teststarnest.until.*
 import javax.inject.Inject
 
 /**
@@ -15,11 +16,13 @@ class KeyBoardRepositoryImpl @Inject constructor(
         keyBoardDao.insertKeyBoards(*keyBoards)
     }
 
-    override suspend fun getKeyBoards(categoryId: String?): List<KeyBoard> {
+    override suspend fun getKeyBoards(categoryId: Long): List<KeyBoard> {
         return keyBoardDao.run {
-            categoryId?.let {
-                getKeyBoards(categoryId)
-            } ?: getKeyBoards()
+            if (categoryId == Constant.DefaultValue.DEFAULT_ALL_TYPE_ID) {
+                getKeyBoards()
+            } else {
+                getKeyBoardsByCategoryId(categoryId)
+            }
         }
     }
 }

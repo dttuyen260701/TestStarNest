@@ -19,9 +19,8 @@ import com.example.teststarnest.data.enums.*
     ]
 )
 data class KeyBoard(
-    @PrimaryKey val id: String = "",
-    @ColumnInfo val categoryId: String = "",
+    @PrimaryKey(autoGenerate = true) val id: Long = 0L,
+    @ColumnInfo val categoryId: Long = 0L,
     @ColumnInfo val previewIcon: Int = 0,
-    @ColumnInfo val type: KeyBoardType = KeyBoardType.OTHER,
-    @ColumnInfo val color: KeyBoardColor = KeyBoardColor.BLACK
+    @ColumnInfo val type: KeyBoardType = KeyBoardType.OTHER
 )

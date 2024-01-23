@@ -10,13 +10,13 @@ import com.example.teststarnest.data.model.*
 @Dao
 interface KeyBoardDao {
     @Insert
-    fun insertKeyBoards(vararg keyBoards: KeyBoard)
+    suspend fun insertKeyBoards(vararg keyBoards: KeyBoard)
 
     @Transaction
     @Query("SELECT * FROM KeyBoard")
-    fun getKeyBoards(): List<KeyBoard>
+    suspend fun getKeyBoards(): List<KeyBoard>
 
     @Transaction
     @Query("SELECT * FROM KeyBoard WHERE categoryId = :categoryId")
-    fun getKeyBoardsByCategoryId(categoryId :String? = null): List<KeyBoard>
+    suspend fun getKeyBoardsByCategoryId(categoryId :Long): List<KeyBoard>
 }

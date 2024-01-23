@@ -9,5 +9,5 @@ import com.example.teststarnest.data.model.*
 interface KeyBoardRepository {
     suspend fun insertKeyBoards(vararg keyBoards: KeyBoard)
 
-    suspend fun getKeyBoards(categoryId :String? = null): List<KeyBoard>
+    suspend fun getKeyBoards(categoryId :Long): List<KeyBoard>
 }
