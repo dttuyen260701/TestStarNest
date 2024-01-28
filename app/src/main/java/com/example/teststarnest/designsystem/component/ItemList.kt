@@ -10,13 +10,12 @@ import androidx.compose.ui.draw.*
 import androidx.compose.ui.graphics.*
 import androidx.compose.ui.layout.*
 import androidx.compose.ui.platform.*
-import androidx.compose.ui.res.*
 import androidx.compose.ui.text.style.*
 import androidx.compose.ui.tooling.preview.*
 import androidx.compose.ui.unit.*
-import com.example.teststarnest.R
 import com.example.teststarnest.data.model.*
 import com.example.teststarnest.designsystem.theme.*
+import com.example.teststarnest.extensions.*
 import com.example.teststarnest.ui.base.*
 import com.example.teststarnest.until.Constant.DefaultValue.PADDING_HORIZONTAL_SCREEN
 
@@ -82,20 +81,23 @@ internal fun ItemKeyBoard(
     onItemClick: (KeyBoard) -> Unit
 ) {
     val roundedCornerShape = RoundedCornerShape(14.dp)
+    val context = LocalContext.current
     val configuration = LocalConfiguration.current
     val itemWith = configuration.screenWidthDp / 2 - PADDING_HORIZONTAL_SCREEN - 5
-    Image(
-        painter = painterResource(id = keyBoard.previewIcon),
-        contentDescription = null,
-        contentScale = ContentScale.FillWidth,
-        modifier = modifier
-            .width(itemWith.dp)
-            .aspectRatio(498f/360f)
-            .clip(roundedCornerShape)
-            .clickable {
-                onItemClick(keyBoard)
-            }
-    )
+    context.getFileFromAssets(keyBoard.previewIcon)?.let {
+        Image(
+            bitmap = it.asImageBitmap(),
+            contentDescription = null,
+            contentScale = ContentScale.FillWidth,
+            modifier = modifier
+                .width(itemWith.dp)
+                .aspectRatio(498f/360f)
+                .clip(roundedCornerShape)
+                .clickable {
+                    onItemClick(keyBoard)
+                }
+        )
+    }
 }
 
 @Preview(showSystemUi = true)
@@ -105,7 +107,7 @@ private fun PreviewItemKeyBoard() {
         keyBoard = KeyBoard(
             id = 1L,
             categoryId = 0L,
-            previewIcon = R.drawable.theme_1
+            previewIcon = "theme_1.png"
         ),
         onItemClick = {}
     )

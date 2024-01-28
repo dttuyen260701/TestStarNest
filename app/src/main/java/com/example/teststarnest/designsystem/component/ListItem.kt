@@ -122,27 +122,27 @@ fun PreviewListKeyBoard() {
                 KeyBoard(
                     id = 1L,
                     categoryId = 1L,
-                    previewIcon = R.drawable.theme_1
+                    previewIcon = "theme_1.png"
                 ),
                 KeyBoard(
                     id = 123L,
                     categoryId = 1L,
-                    previewIcon = R.drawable.theme_2
+                    previewIcon = "theme_2.png"
                 ),
                 KeyBoard(
                     id = 1231L,
                     categoryId = 1L,
-                    previewIcon = R.drawable.theme_3
+                    previewIcon = "theme_3.png"
                 ),
                 KeyBoard(
                     id = 12321L,
                     categoryId = 1L,
-                    previewIcon = R.drawable.theme_4
+                    previewIcon = "theme_4.png"
                 ),
                 KeyBoard(
                     id = 1232561L,
                     categoryId = 1L,
-                    previewIcon = R.drawable.theme_5
+                    previewIcon = "theme_5.png"
                 )
             ),
             onKeyBoardClick = {

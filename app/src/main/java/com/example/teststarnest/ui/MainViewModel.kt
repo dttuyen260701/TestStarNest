@@ -1,7 +1,6 @@
 package com.example.teststarnest.ui
 
 import androidx.lifecycle.*
-import com.example.teststarnest.*
 import com.example.teststarnest.data.enums.*
 import com.example.teststarnest.data.model.*
 import com.example.teststarnest.data.repository.keyboard.*
@@ -37,22 +36,22 @@ class MainViewModel @Inject constructor(
                     )
                 )
                 val themes = listOf(
-                    R.drawable.theme_1,
-                    R.drawable.theme_2,
-                    R.drawable.theme_3,
-                    R.drawable.theme_4,
-                    R.drawable.theme_5,
-                    R.drawable.theme_6,
-                    R.drawable.theme_7,
-                    R.drawable.theme_8,
-                    R.drawable.theme_9,
-                    R.drawable.theme_10,
-                    R.drawable.theme_11,
-                    R.drawable.theme_12,
-                    R.drawable.theme_13,
-                    R.drawable.theme_14,
-                    R.drawable.theme_15,
-                    R.drawable.theme_16
+                    "theme_1.png",
+                    "theme_2.png",
+                    "theme_3.png",
+                    "theme_4.png",
+                    "theme_5.png",
+                    "theme_6.png",
+                    "theme_7.png",
+                    "theme_8.png",
+                    "theme_9.png",
+                    "theme_10.png",
+                    "theme_11.png",
+                    "theme_12.png",
+                    "theme_13.png",
+                    "theme_14.png",
+                    "theme_15.png",
+                    "theme_16.png",
                 )
 
                 val categoriesNew = categoryRepository.getKeyBoardCategories()
